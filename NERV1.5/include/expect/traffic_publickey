@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+#public key
+set timeout 18000
+set source     [lindex $argv 0]
+set host [lindex $argv 1]
+set PASSWD [lindex $argv 2]
+spawn scp -r $source $host
+
+expect {
+"(yes/no)?" { send "yes\r" ;exp_continue }
+"assword:" { send "$PASSWD\r" }
+}
+#expect eof

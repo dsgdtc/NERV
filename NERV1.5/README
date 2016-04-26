@@ -1,0 +1,2 @@
+
+1.2 修改BUG,WORKDIR的获取方式,使得可以从任何目录执行python /a/b/c/nerv.py
